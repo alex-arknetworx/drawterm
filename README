@@ -8,6 +8,8 @@ protocol.
 
 INSTALLATION
 --------------
+To cross compile build for Kakao Linux on Linux, run CONF=kakao make.
+
 To build on Unix, run CONF=unix make.
 
 To build on Solaris using Sun cc, run CONF=sun make.
