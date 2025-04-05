@@ -312,8 +312,9 @@ TOP:
 		}
 		for (r = 0; r < neventfds; r++)
 			if (pfd[r+3].revents & POLLIN) {
-				if (read(pfd[r+3].fd, &data, sizeof(data)) != sizeof(data))
+				if (read(pfd[r+3].fd, &data, sizeof(data)) != sizeof(data)) {
 					panic("eventfd read: %r");
+				}
 				if (onevent(&data) == 0) {
 					ioctlarg = 15;
 					if (ioctl(0, TIOCLINUX, &ioctlarg) != 0) {
