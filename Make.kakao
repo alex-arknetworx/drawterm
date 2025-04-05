@@ -1,0 +1,19 @@
+# Unix
+#PTHREAD=	# for Mac
+PTHREAD=-pthread
+AR=riscv32-unknown-linux-gnu-ar
+AS=riscv32-unknown-linux-gnu-as
+RANLIB=riscv32-unknown-linux-gnu-ranlib
+CC=riscv32-unknown-linux-gnu-gcc
+CFLAGS=-Wall -Wno-missing-braces -ggdb -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -D_THREAD_SAFE $(PTHREAD) -O2
+O=o
+OS=posix
+GUI=fbdev
+#LDADD=-ggdb -lm -lasound
+LDADD=-ggdb -lm
+LDFLAGS=$(PTHREAD)
+TARG=drawterm
+AUDIO=none
+#AUDIO=alsa
+
+all: default
